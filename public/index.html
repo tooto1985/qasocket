@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Client</title>
-	<link rel="stylesheet" href="index.css">
-	<script src="/socket.io/socket.io.js"></script>
-	<script src="//code.jquery.com/jquery-1.11.3.js"></script>
-	<script src="index.js"></script>
+    <meta charset="UTF-8">
+    <title>回報系統</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="index.js"></script>
 </head>
+
 <body>
-	<div class="login">
-		<form class="loginform">
-			<span>名稱：</span>
-			<input type="text" class="loginname">
-			<input type="submit" value="確定">
-		</form>
-	</div>
-	<div class="control">
-		<span>名稱：</span>
-		<span class="controlname"></span>
-		<p></p>
+    <div class="client">
+        <div class="login">
+            <form class="form">
+                <span>名稱：</span>
+                <input type="text" class="name">
+                <input type="submit" value="確定">
+            </form>
+        </div>
+        <div class="wait">
+        	請稍候......
+        </div>
+        <div class="result">
+            <span>名稱：</span>
+            <span class="name"></span>
+            <p></p>
+            <div>
+                <input type="checkbox" id="completed">
+                <label for="completed">完成<span class="topic"></span>範例</label>
+            </div>
+            <p></p>
+            <div>
+                <div>實作發生問題說明 or 其他相關問題皆可發問</div>
+                <textarea class="question" cols="60" rows="10"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="admin">
 		<div>
-			<input type="checkbox" id="completed">
-			<label for="completed">完成範例</label>
+			<span class="completedCount">0</span>
+			<span>/</span>
+			<span class="totalCount">0</span>
+			<input type="text" class="topic">
+			<input type="button" value="下一題" class="nexttopic">
 		</div>
-		<p></p>
-		<div>
-			<div>實作發生問題說明 or 其他相關問題皆可發問</div>
-			<textarea id="content" cols="60" rows="10"></textarea>
-		</div>
-	</div>
+		<div class="list"></div>
+    </div>
 </body>
+
 </html>

@@ -1,3 +1,7 @@
-.control {
-	display: none;
+.admin,
+.client,
+.wait,
+.result
+{
+    display: none;
 }
