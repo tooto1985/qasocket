@@ -2,6 +2,7 @@ $(function() {
 	var socket = io.connect();
 
 	function admin() {
+		var oldder;
 		$(".nexttopic").click(function() {
 			socket.emit("admin_settopic", $(".admin .topic").val());
 			$(".list").html("");
@@ -9,9 +10,12 @@ $(function() {
 		socket.on("admin_getquestion", function(data) {
 			var html = "";
 			for (var i = 0; i < data.length; i++) {
-				html += "<div>" + data[i].name + ":" + data[i].question + "</div>";
+				html += "<div class=\"bg-info\">" + data[i].name + ":" + data[i].question + "</div>";
 			}
-			$(".list").html(html);
+			if(oldder !== html) {
+				$(".list").html(html);
+				oldder = html;	
+			}
 		});
 		socket.on("count", function(data) {
 			$(".totalCount").text(data.total);

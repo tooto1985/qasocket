@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>回報系統</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="//code.jquery.com/jquery-1.11.3.js"></script>
     <script src="index.js"></script>
 </head>
 
 <body>
-    <div class="client">
+    <div class="client col-md-offset-4 col-md-4">
         <div class="login">
             <form class="form">
                 <span>名稱：</span>
-                <input type="text" class="name">
-                <input type="submit" value="確定">
+                <input type="text" class="name" >
+                <input type="submit" value="確定" >
             </form>
         </div>
         <div class="wait">
@@ -36,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="admin">
+    <div class="admin col-md-offset-4 col-md-4">
 		<div>
 			<span class="completedCount">0</span>
 			<span>/</span>

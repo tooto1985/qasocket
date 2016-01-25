@@ -1,7 +1,26 @@
 .admin,
 .client,
 .wait,
-.result
-{
+.result{
     display: none;
+}
+.client,.admin {
+	margin-top:50px;
+}
+.login,.wait {
+	text-align: center;
+}
+.form {
+	display: inline;
+}
+.question {
+	width:100%;
+}
+.bg-info {
+    margin-top: 10px;
+    min-height: 30px;
+    line-height: 30px;
+    border-radius: 10px;
+    padding: 0 10px;
+    word-wrap: break-word;
 }

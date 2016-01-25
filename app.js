@@ -4,11 +4,9 @@ var server = require("http").Server(app);
 var io = require("socket.io")(server);
 var topic = "";
 var users = [];
-var SOCKET = null;
 var timeout = 5000;
 app.use(express.static(__dirname + "/public"));
 io.on("connection", function(socket) {
-	SOCKET = socket;
 	socket.on("admin_settopic", function(data) {
 		topic = data;
 		socket.broadcast.emit("client_newtopic", topic);
@@ -49,7 +47,6 @@ io.on("connection", function(socket) {
 				users[i].result = data.result;
 			}
 		}
-
 	});
 	socket.on("client_question", function(data) {
 		for (var i = 0; i < users.length; i++) {
@@ -59,29 +56,29 @@ io.on("connection", function(socket) {
 		}
 		question();
 	});
-});
 
-function count() {
-	SOCKET.broadcast.emit("count", {
-		total: users.length,
-		completed: users.filter(function(a) {
-			return a.result === true;
-		}).length
-	});
-}
+	function count() {
+		var counts = {
+			total: users.length,
+			completed: users.filter(function(a) {
+				return a.result === true;
+			}).length
+		};
+		socket.broadcast.emit("count", counts);
+	}
 
-function question() {
-	SOCKET.broadcast.emit("admin_getquestion", users.filter(function(a) {
-		return a.question !== "" && new Date().getTime() - a.time < timeout;;
-	}));
-}
-setInterval(function() {
-	users = users.filter(function(a) {
-		return new Date().getTime() - a.time < timeout;
-	});
-	if (SOCKET) {
+	function question() {
+		var questions = users.filter(function(a) {
+			return a.question !== "" && new Date().getTime() - a.time < timeout;;
+		});
+		socket.broadcast.emit("admin_getquestion", questions);
+	}
+	setInterval(function() {
+		users = users.filter(function(a) {
+			return new Date().getTime() - a.time < timeout;
+		});
 		count();
 		question();
-	}
-}, 3000);
+	}, 3000);
+});
 server.listen(3000);
