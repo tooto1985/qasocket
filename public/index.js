@@ -109,12 +109,21 @@ $(function() {
 				question: $(this).val()
 			});
 		});
+
+		$(".button").on("click",function() {
+			$(this).addClass("clicked");
+			$("#completed").attr("checked", true);
+			$("#completed").change();
+		});
+
 		socket.on("client_newtopic", function(data) {
 			if (name) {
 				if (data) {
 					show("result");
 					$(".result .name").text(name);
 					$(".result .topic").text(data);
+					//$(".button").removeClass("clicked");
+					//$(".button>span").text("完成"+data+"範例");
 					$("#completed").attr("checked", false);
 					$(".question").val("");
 				} else {
