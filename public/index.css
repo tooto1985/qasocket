@@ -1,7 +1,9 @@
 .admin,
 .client,
 .wait,
-.result{
+.result,
+.broadcasttitle,
+.listtitle {
     display: none;
 }
 .client,.admin {
@@ -13,7 +15,7 @@
 .form {
 	display: inline;
 }
-.question {
+.question,.broadcast {
 	width:100%;
 }
 .bg-info {
@@ -23,4 +25,18 @@
     border-radius: 10px;
     padding: 0 10px;
     word-wrap: break-word;
+}
+.status {
+    width: 20px;
+    height: 20px;
+    background-color: #c0c0c0;
+    float: right;
+    border-radius: 10px;
+    margin-top: 3px;
+}
+.on {
+    background-color: green;
+}
+.off {
+    background-color: red;
 }

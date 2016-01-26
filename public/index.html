@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>回報系統</title>
     <link rel="stylesheet" href="index.css"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
     <script src="//code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="index.js"></script>
 </head>
-
 <body>
     <div class="client col-md-offset-4 col-md-4">
         <div class="login">
@@ -36,18 +35,42 @@
                 <div>實作發生問題說明 or 其他相關問題皆可發問</div>
                 <textarea class="question" cols="60" rows="10"></textarea>
             </div>
+            <p></p>
+            <div>整體完成進度</div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                0%
+                </div>
+            </div>
+            <p></p>
+            <div class="broadcasttitle">訊息廣播</div>
+            <div class="broadcast"></div>
         </div>
     </div>
     <div class="admin col-md-offset-4 col-md-4">
+        <div>整體完成進度</div>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+            0%
+            </div>
+        </div>
+        <div>回報項目</div>
 		<div>
 			<span class="completedCount">0</span>
 			<span>/</span>
 			<span class="totalCount">0</span>
 			<input type="text" class="topic">
 			<input type="button" value="下一題" class="nexttopic">
+            <div class="status"></div>
 		</div>
+        <p></p>
+        <div>
+            <div>廣播訊息</div>
+            <textarea class="broadcast" cols="60" rows="5"></textarea>
+        </div>
+        <p></p>
+        <div class="listtitle">其他問題</div>
 		<div class="list"></div>
     </div>
 </body>
-
 </html>
