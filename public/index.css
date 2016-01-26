@@ -3,21 +3,31 @@
 .wait,
 .result,
 .broadcasttitle,
-.listtitle {
+.listtitle,
+#completed,
+div>label {
     display: none;
 }
-.client,.admin {
-	margin-top:20px;
+
+.client,
+.admin {
+    margin-top: 20px;
 }
-.login,.wait {
-	text-align: center;
+
+.login,
+.wait {
+    text-align: center;
 }
+
 .form {
-	display: inline;
+    display: inline;
 }
-.question,.broadcast {
-	width:100%;
+
+.question,
+.broadcast {
+    width: 100%;
 }
+
 .bg-info {
     margin-top: 10px;
     min-height: 30px;
@@ -26,6 +36,7 @@
     padding: 0 10px;
     word-wrap: break-word;
 }
+
 .status {
     width: 20px;
     height: 20px;
@@ -34,12 +45,19 @@
     border-radius: 10px;
     margin-top: 3px;
 }
+
 .on {
     background-color: green;
 }
+
 .off {
     background-color: red;
 }
+
+.btnbox {
+    text-align: center;
+}
+
 .button {
     display: inline-block;
     margin: 0 auto;
@@ -48,13 +66,14 @@
     transition: box-shadow .1s ease-in-out;
     cursor: pointer;
 }
+
 .button span {
     background-color: lightgray;
     background-image: gradient( linear, left bottom, left top, color-stop(50%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.3)), color-stop(100%, rgba(255, 255, 255, 0.2))), gradient( linear, left top, right top, color-stop(0%, rgba(210, 210, 210, 0.3)), color-stop(20%, rgba(210, 210, 210, 0)), color-stop(80%, rgba(210, 210, 210, 0)), color-stop(100%, rgba(210, 210, 210, 0.3))), gradient( linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(20%, rgba(255, 255, 255, 0.5)), color-stop(80%, rgba(255, 255, 255, 0.5)), color-stop(100%, rgba(255, 255, 255, 0))), gradient( linear, 0% 100%, 100% 0%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(40%, rgba(255, 255, 255, 0)), color-stop(40%, #D2D2D1), color-stop(60%, #D2D2D1), color-stop(60%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
     box-shadow: 0px -1px #fff, 0px 1px 1px #FFFFFF;
     background-size: 100%, 100%, 100%, 4px 4px;
     border-radius: 10px;
-    transition: transform .1s ease-in-out;
+    transition: transform .1s ease-in-out, background-color .1s, color .1s;
     display: inline-block;
     padding: 10px 40px 10px 40px;
     color: #3A474D;
@@ -63,12 +82,17 @@
     font-size: 32px;
     text-shadow: 0px 1px #fff, 0px -1px #262F33;
 }
+
 .button:active {
     box-shadow: 0px 3px rgba(128, 128, 128, 1), 0px 4px rgba(118, 118, 118, 1), 0px 5px rgba(108, 108, 108, 1), 0px 6px rgba(98, 98, 98, 1), 0px 7px rgba(88, 88, 88, 1), 0px 8px rgba(78, 78, 78, 1), 0px 10px 2px 0px rgba(128, 128, 128, .6);
 }
+
 .button.clicked {
     box-shadow: 0px 3px rgba(128, 128, 128, 1), 0px 4px rgba(118, 118, 118, 1), 0px 5px rgba(108, 108, 108, 1), 0px 6px rgba(98, 98, 98, 1), 0px 7px rgba(88, 88, 88, 1), 0px 8px rgba(78, 78, 78, 1), 0px 10px 2px 0px rgba(128, 128, 128, .6);
 }
+
 .button.clicked span {
     transform: translate(0, 5px);
+    background-color: gold;
+    color: black;
 }
