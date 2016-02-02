@@ -27,7 +27,7 @@ io.on("connection", function(socket) {
 			if (isAdmin) {
 				socket.emit("count", counts);
 			} else {
-				socket.broadcast.emit("count", counts);
+			    socket.broadcast.emit("count", counts);
 			}
 			_counts = counts;
 		}
@@ -132,3 +132,4 @@ io.on("connection", function(socket) {
 	}, 3000);
 });
 server.listen(3000);
+console.log("running");
