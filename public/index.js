@@ -132,12 +132,12 @@ $(function() {
                 }
             }
         });
-        /*
+        
         socket.on("count", function(data) {
             var progress = Math.round((data.completed.length / data.total.length) * 100);
             $(".result .progress-bar").attr("aria-valuenow", progress).width(progress + "%").text(progress + "%");
         });
-        */
+        
         socket.on("client_getbroadcast", function(data) {
             if (data) {
                 $(".broadcasttitle").show();
